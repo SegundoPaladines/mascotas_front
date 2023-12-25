@@ -85,6 +85,7 @@ const MascotasComponent = () => {
                     estado:estado
                 }
                 metodo = "PUT";
+
             }
             enviarSolicitud(metodo, parametros);
         }
@@ -147,22 +148,36 @@ const MascotasComponent = () => {
                                     <th>#</th>
                                     <th>NOMBRE</th>
                                     <th>EDAD</th>
+                                    <th>Tipo de Mascota</th>
+                                    <th>Estado</th>
                                     </tr>
                                 </thead>
                                 <tbody className="table-group-divider">
                                     {
                                         mascotas.map((mascota, index) => (
                                             <tr key={mascota.pk}>
-                                                <td>{index}</td>
+                                                <td>{index+1}</td>
                                                 <td>{mascota.nombre}</td>
                                                 <td>{mascota.edad}</td>
+                                                <td> 
+                                                    {mascota.tipo_mascota === "P"?
+                                                        (<p>Perro</p>):
+                                                        (<p>Gato</p>)
+                                                    }
+                                                </td>
                                                 <td>
-                                                    <button 
+                                                    {mascota.estado === 1?
+                                                        (<p>Adoptado</p>):
+                                                        (<p>Lista para Adoptar</p>)
+                                                    }</td>
+                                                <td>
+                                                    <button
                                                         className="btn btn-info"
                                                         data-bs-toggle = "modal"
                                                         data-bs-target = "#modalMascotas"
                                                         onClick={(e) => openModal(2, mascota.pk, mascota.nombre, mascota.edad, mascota.estado, mascota.tipo_mascota)}
-                                                    ><i className="fa-solid fa-edit"></i></button>
+                                                    ><i className="fa-solid fa-edit"></i>
+                                                    </button>
                                                 </td>
                                                 <td>
                                                     <button
