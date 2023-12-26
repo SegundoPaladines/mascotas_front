@@ -145,11 +145,12 @@ const MascotasComponent = () => {
                             <table className="table table-bordered">
                                 <thead>
                                     <tr>
-                                    <th>#</th>
-                                    <th>NOMBRE</th>
-                                    <th>EDAD</th>
-                                    <th>Tipo de Mascota</th>
-                                    <th>Estado</th>
+                                        <th>#</th>
+                                        <th>Nombre</th>
+                                        <th>Edad</th>
+                                        <th>Tipo de Mascota</th>
+                                        <th>Estado</th>
+                                        <th colSpan={2}>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody className="table-group-divider">

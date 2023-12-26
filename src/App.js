@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HeaderComponent, ListaMascotasComponent, MascotasComponent } from './components';
+import { HeaderComponent, ListaMascotasComponent, MascotasComponent, SolicitudesComponent } from './components';
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path='/' element={ <MascotasComponent /> } />
         <Route path='/mascotas' element={<ListaMascotasComponent />} />
+        <Route path='/solicitudes' element={<SolicitudesComponent />} />
       </Routes>
     </BrowserRouter>
   );

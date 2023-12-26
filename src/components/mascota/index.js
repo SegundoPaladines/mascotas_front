@@ -12,13 +12,12 @@ const MascotaComponent = ({pk, nombre, edad, tipo_mascota, estado}) => {
         if(adoptante === ''){
             mostrarAlerta("Debe escribir su nombre");
         }else{
-            console.log(adoptante);
             const hoy = new Date();
             const fecha_inicio = hoy.toISOString().split('T')[0];
             const parametros = {
                 mascotaPK:pk,
                 adoptante:adoptante,
-                estado:"A",
+                estado:"P",
                 fecha_inicio:fecha_inicio
             }
             enviarSolicitud('POST', url, parametros);
@@ -44,7 +43,7 @@ const MascotaComponent = ({pk, nombre, edad, tipo_mascota, estado}) => {
                 <hr />
                 <p className="card-text text-center">Edad: {edad} años.</p>
                 {estado === 1?(
-                        <div class="alert alert-success text-center" role="alert">
+                        <div className="alert alert-success text-center" role="alert">
                             Esta mascota ya fue Adoptada
                         </div>
                     ):(
