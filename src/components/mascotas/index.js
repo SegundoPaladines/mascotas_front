@@ -53,19 +53,19 @@ const MascotasComponent = () => {
         
         if(nombre.trim === ''){
             console.log("debe escribir un nombre");
-            mostrarAlerta("debe escribir un nombre");
+            mostrarAlerta("debe escribir un nombre", 'error');
         }
         else if (edad.trim === ''){
             console.log("debe escribir una edad");
-            mostrarAlerta("debe escribir una edad");
+            mostrarAlerta("debe escribir una edad", 'error');
         }
         else if (estado.trim === ''){
             console.log("debe escribir un estado");
-            mostrarAlerta("debe escribir un estado");
+            mostrarAlerta("debe escribir un estado", 'error');
         }
         else if (tipo.trim === ''){
             console.log("debe escribir un tipo");
-            mostrarAlerta("debe escribir un tipo");
+            mostrarAlerta("debe escribir un tipo", 'error');
         }else{
             if(operacion === 1){
                 parametros ={
@@ -96,7 +96,7 @@ const MascotasComponent = () => {
         .then((respuesta) => {
             let tp = respuesta.data.tipo;
             let mensaje = respuesta.data.mensaje;
-            mostrarAlerta(tp, mensaje);
+            mostrarAlerta(mensaje, tp);
             if(tp === "success"){
                 document.getElementById("btnCerrarModal").click();
                 getMascotas();

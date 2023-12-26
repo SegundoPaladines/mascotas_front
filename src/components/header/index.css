@@ -1,0 +1,16 @@
+.nav-item .nav-link:hover{
+    border-bottom: 2px solid black;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.nav-item .nav-link{
+    color: white;
+}
+.nav-item{
+    height: 50px;
+}
+.activo{
+    color: rgb(23, 23, 65);
+    border-bottom: rgb(23, 23, 65);
+}
